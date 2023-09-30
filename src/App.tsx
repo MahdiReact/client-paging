@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import Card from "./components/Card";
 import Pagination from "./components/Pagination";
 import { Programmer } from "./model";
-import usePaginatedFetch from "./UsePaginatedFetch";
+import UsePaginatedFetch from "./UsePaginatedFetch";
 
 const baseUrl = "https://react-mini-projects-api.classbon.com/Programmer";
 
 function App () {
-	const [loading, data] = usePaginatedFetch(baseUrl + "/programmers", 3);
+	const [loading, data] = UsePaginatedFetch(baseUrl + "/programmers", 3);
 	const [page, setPage] = useState<number>(1);
 	const [programmers, setProgrammers] = useState<Programmer[]>([]);
 
