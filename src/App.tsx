@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "./components/Card";
 import Pagination from "./components/Pagination";
 import { Programmer } from "./model";
-import usePaginatedFetch from "./usePaginatedFetch";
+import usePaginatedFetch from "./UsePaginatedFetch";
 
 const baseUrl = "https://react-mini-projects-api.classbon.com/Programmer";
 
