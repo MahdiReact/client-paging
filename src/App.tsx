@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import Card from "./components/Card";
 import Pagination from "./components/Pagination";
 import { Programmer } from "./model";
-import UsePaginatedFetch from "./UsePaginatedFetch";
+import usePaginatedFetch from "./usePaginatedFetch";
 
 const baseUrl = "https://react-mini-projects-api.classbon.com/Programmer";
 
 function App () {
-	const [loading, data] = UsePaginatedFetch(baseUrl + "/programmers", 3);
+	const [loading, data] = usePaginatedFetch(baseUrl + "/programmers", 3);
 	const [page, setPage] = useState<number>(1);
 	const [programmers, setProgrammers] = useState<Programmer[]>([]);
 
@@ -33,7 +33,7 @@ function App () {
 					{programmers.map(({id , ...programmer}) =>{
 						return (
 						<div className="col-3" key={id}>
-							<Card {...programmer} />
+							<Card id={id} {...programmer} />
 						</div>
 						)
 					})}
