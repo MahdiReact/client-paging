@@ -11,7 +11,7 @@ const usePaginatedFetch: (url:string, pageSize:number) => [boolean, Programmer[]
 
    const getData: (url: string) => void  = async (url) => {
       const response = await fetch(url);
-      const result = await response.json();
+      const result: Programmer[] = await response.json();
       const paginatedData: Programmer[][] = chunk(result, pageSize);
       setData(paginatedData);
       setLoading(false);
